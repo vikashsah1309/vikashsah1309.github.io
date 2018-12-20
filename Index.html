@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+</head>
+  <body>
+   <form method="get">
+    <input type="number" name="nombrePlat" id="nombreP">
+    <input type="submit" value="Envoyer" id="ok" onclick="getP()">
+</form>
+<div id="player-wrapper"></div>
+     <script type="text/javascript">
+	function getP () {
+
+    var nbP = Number(document.getElementById("nombreP").value);
+
+    for (var i = 0; i < nbP; i++) {
+        //var newForm = document.createElement("input[type=text]");
+		var newForm = document.createElement("<input type=text></input>")
+            newForm.id = "form"+i
+        document.body.appendChild(newForm);
+    }
+	}
+	
+	var playerElement = document.getElementById("player-wrapper"); 
+	var player = new Clappr.Player({
+	source: 'http://clappr.io/highline.mp4', 
+	poster: 'http://clappr.io/poster.png', 
+	mute: true, 
+	height: 360, 
+	width: 640 
+	}); 
+	player.attachTo(playerElement);
+   
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),
+s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5c0fe34f82491369ba9da6b6/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
